@@ -1,0 +1,9 @@
+version: '3'
+services:
+  awesomejava:
+    build: ./
+    restart: always
+    ports:
+      - "127.0.0.1:8532:8080"
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN:-ghp_ABC}

@@ -1,0 +1,50 @@
+plugins {
+    id 'application' // For the 'run' task.
+    id 'org.springframework.boot' version '3.1.5' // For ./gradlew bootJar
+}
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass = 'web.Main'
+}
+
+// Run parser binary.
+task runParser(dependsOn: 'classes', type: JavaExec) {
+    mainClass = 'parser.Main'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+// Override "app/src/java/" convention because I don't like it.
+sourceSets {
+    main.java.srcDirs = ["source", "parser", "web"]
+    main.resources.srcDirs = ["public"]
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.1.4'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:3.1.4'
+}
+
+// Fixes weird error "Entry META-INF/LICENSE.txt is a duplicate but no duplicate handling strategy has been set".
+tasks.withType(Tar){
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.withType(Zip){
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'web.Main'
+    }
+
+    // Fat Jar: Bundle dependencies together
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
