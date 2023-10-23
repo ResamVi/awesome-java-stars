@@ -11,7 +11,7 @@ import java.nio.file.Files;
 
 public class Reader {
     public String getContent() {
-        InputStream stream = ClassLoader.getSystemClassLoader().getResourceAsStream("LIST.md");
+        InputStream stream = Reader.class.getResourceAsStream("/LIST.md");
         return readFromInputStream(stream);
     }
 
