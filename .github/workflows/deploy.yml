@@ -11,15 +11,15 @@ jobs:
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          envs: GITHUB_TOKEN
+          envs: GH_TOKEN
           script: |
-            export GITHUB_TOKEN=$GITHUB_TOKEN
+            export GITHUB_TOKEN=$GH_TOKEN
             git clone git@github.com:ResamVi/awesome-java-stars.git repo
             docker-compose -p awesomejava -f repo/docker-compose.yml down
             docker-compose -p awesomejava -f repo/docker-compose.yml up --detach --build --force-recreate
