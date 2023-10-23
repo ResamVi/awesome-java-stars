@@ -8,6 +8,7 @@ import java.util.Timer;
 import java.util.TimerTask; 
 import java.util.ArrayList; 
 
+import parser.Reader;
 import parser.GitHub;
 import parser.Parser;
 import parser.Category;
@@ -19,12 +20,14 @@ class Cron extends TimerTask {
 
     private static int iteration = 0;
 
+    private Reader reader;
     private GitHub github;
     private Parser parser;
 
     private ArrayList<Category> categories;
 
     Cron() {
+        this.reader = new Reader();
         this.github = new GitHub(System.getenv("GITHUB_TOKEN"));
         this.parser = new Parser(this.github);
 
@@ -36,7 +39,7 @@ class Cron extends TimerTask {
     public void run() { 
         LOGGER.info("Started cron at iteration " + ++iteration);
 
-        this.categories = parser.parse(github.getContent());
+        this.categories = parser.parse(this.reader.getContent());
 
         LOGGER.info("finished cron iteration");
     } 

@@ -25,7 +25,6 @@ public class GitHub {
 
     private String token;
 
-    private record Content(String content) {}
     private record Stars(int stargazersCount) {}
 
     private Pattern regRepo = Pattern.compile("https://github.com/(.+)");
@@ -36,35 +35,6 @@ public class GitHub {
             .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
             .create();
         this.token = token;
-    }
-
-    public String getContent() {
-        LOGGER.info("Fetching GitHub Content");
-
-        var request = HttpRequest.newBuilder()
-            .uri(URI.create("https://api.github.com/repos/akullpp/awesome-java/contents/README.md"))
-            .header("Content-Type", "application/json")
-            .header("X-GitHub-Api-Version", "2022-11-28")
-            .header("Authorization", "Bearer " + this.token)
-            .build();
-
-        try {
-            var response = this.client.send(request, BodyHandlers.ofString());
-
-            var body = this.decoder.fromJson(response.body(), Content.class);
-            if (body.content == null) {
-                LOGGER.severe(response.body());
-            }
-
-            var decoded = Base64.getDecoder().decode(body.content.replace("\n", ""));
-
-            LOGGER.info("Finished fetching.");
-            return new String(decoded);
-        } catch(IOException|InterruptedException e) {
-            LOGGER.severe(e.toString());
-        }
-
-        return "";
     }
 
     public int getStars(String fullPath) {
@@ -78,22 +48,25 @@ public class GitHub {
 
         String url = String.format("https://api.github.com/repos/%s", name);
 
-        var request = HttpRequest.newBuilder()
+        var builder = HttpRequest.newBuilder()
             .uri(URI.create(url))
             .header("Content-Type", "application/json")
-            .header("X-GitHub-Api-Version", "2022-11-28")
-            .header("Authorization", "Bearer " + this.token)
-            .build();
+            .header("X-GitHub-Api-Version", "2022-11-28");
+
+        if(this.token != null) {
+            builder.header("Authorization", "Bearer " + this.token);
+        }
+        var request = builder.build();
 
         try {
             var response = this.client.send(request, BodyHandlers.ofString());
+            var body = this.decoder.fromJson(response.body(), Stars.class);
 
-            var body = this.decoder.fromJson(response.body(), Stars.class); // TODO: Rate limit?
             return body.stargazersCount;
         } catch(IOException|InterruptedException e) {
             LOGGER.severe(e.toString());
         }
 
-        return 0;
+        return -1;
     }
 }

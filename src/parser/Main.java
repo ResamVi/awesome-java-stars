@@ -5,14 +5,13 @@ import com.google.gson.GsonBuilder;
 
 class Main {
     public static void main(String[] args) {
-        var token = System.getenv("GITHUB_TOKEN");
-
-        var source = new GitHub(token);
+        var reader = new Reader();
+        var source = new GitHub(System.getenv("GITHUB_TOKEN"));
         var parser = new Parser(source);
+        var gson   = new GsonBuilder().setPrettyPrinting().create();
 
-        var result = parser.parse(source.getContent());
+        var result = parser.parse(reader.getContent());
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         System.out.println(gson.toJson(result));
     }
 }

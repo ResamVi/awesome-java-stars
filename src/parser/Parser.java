@@ -3,8 +3,11 @@ package parser;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.logging.Logger;
 
 public class Parser {
+    private static Logger LOGGER = Logger.getLogger(Parser.class.getName());
+
     private Pattern regTitle = Pattern.compile("####? (.+)");
     private Pattern regDescription = Pattern.compile("_(.+)_");
     private Pattern regEntry = Pattern.compile("\\- \\[(.+)\\]\\(([\\w://\\.\\-]+)\\) \\- (.+)");
@@ -16,6 +19,8 @@ public class Parser {
     }
 
     public ArrayList<Category> parse(String content) {
+        LOGGER.info("Start parsing.");
+
         String[] lines = content.split("\n");
 
         ArrayList<Category> result = new ArrayList<>();
@@ -28,7 +33,6 @@ public class Parser {
         // - [Name of first entry](http://example.com) - Description of entry
         // - [Name of second entry](http://example.com) - Another description of the entry
 
-        // for(int i = 0; i < lines.length; i++) {
         for(int i = 0; i < lines.length; i++) {
             // Title.
             Matcher nameMatcher = regTitle.matcher(lines[i]);
@@ -65,22 +69,17 @@ public class Parser {
                 }
                 int starCount = this.source.getStars(repoUrl);
 
-                // Some projects were renamed, forked, moved and their starCount is therefore zero.
-                // -> Ignore those.
-                if(starCount > 0) {
-                    category.addEntry(name, repoUrl, descr, starCount);
-                }
+                category.addEntry(name, repoUrl, descr, starCount);
+            }
 
-            }
-            if(category.length() > 0) {
-                result.add(category);
-            }
+            result.add(category);
         }
 
         // Sort by stars.
         for(Category category : result ) {
             category.sort();
         }
+        LOGGER.info("Parsing finished.");
 
         return result;
     }
