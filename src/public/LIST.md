@@ -30,22 +30,22 @@ _Libraries to manipulate bytecode programmatically._
 - [ASM](https://gitlab.ow2.org/asm/asm) - All-purpose, low-level bytecode manipulation and analysis.
 - [Byte Buddy](https://github.com/raphw/byte-buddy) - Further simplifies bytecode generation with a fluent API.
 - [bytecode-viewer](https://github.com/Konloch/bytecode-viewer) - Java 8 Jar & Android APK reverse engineering suite. (GPL-3.0-only)
-- [Byteman](https://byteman.jboss.org) - Manipulate bytecode at runtime via DSL (rules); mainly for testing/troubleshooting. (LGPL-2.1-or-later)
+- [Byteman](https://github.com/bytemanproject/byteman) - Manipulate bytecode at runtime via DSL (rules); mainly for testing/troubleshooting. (LGPL-2.1-or-later)
 - [cglib](https://github.com/cglib/cglib) - Bytecode generation library.
 - [Javassist](https://github.com/jboss-javassist/javassist) - Tries to simplify bytecode editing.
 - [Maker](https://github.com/cojen/maker) - Provides low level bytecode generation.
 - [Mixin](https://github.com/SpongePowered/Mixin) - Manipulate bytecode at runtime using real Java code.
 - [Perses](https://github.com/nick-kanakis/perses) - Dynamically injects failure/latency at the bytecode level according to principles of chaos engineering.
-- [Recaf](https://www.coley.software/Recaf) - JVM reverse engineering toolkit, essentially an IDE for Java bytecode.
+- [Recaf](https://github.com/Col-E/Recaf) - JVM reverse engineering toolkit, essentially an IDE for Java bytecode.
 
 ### Caching
 
 _Libraries that provide caching facilities._
 
-- [cache2k](https://cache2k.org) - In-memory high performance caching library.
+- [cache2k](https://github.com/cache2k/cache2k) - In-memory high performance caching library.
 - [Caffeine](https://github.com/ben-manes/caffeine) - High-performance, near-optimal caching library.
-- [Ehcache](http://www.ehcache.org) - Distributed general-purpose cache.
-- [Infinispan](https://infinispan.org) - Highly concurrent key/value datastore used for caching.
+- [Ehcache](https://github.com/ehcache/ehcache3) - Distributed general-purpose cache.
+- [Infinispan](https://github.com/infinispan/infinispan) - Highly concurrent key/value datastore used for caching.
 
 ### CLI
 
@@ -53,14 +53,14 @@ _Libraries for everything related to the CLI._
 
 - [ASCII Table](https://github.com/vdmeer/asciitable) - Library to draw tables in ASCII.
 - [Airline](https://github.com/airlift/airline) - Annotation-based framework for parsing Git-like command-line arguments.
-- [args4j](http://args4j.kohsuke.org) - Small library to parse command-line arguments.
+- [args4j](https://github.com/kohsuke/args4j) - Small library to parse command-line arguments.
 - [Jansi](https://github.com/fusesource/jansi) - ANSI escape codes to format console output.
 - [Java ASCII Render](https://github.com/indvd00m/java-ascii-render) - Graphical primitives for the console.
-- [JCommander](http://jcommander.org) - Command-line argument-parsing framework with custom types and validation via implementing interfaces.
+- [JCommander](https://github.com/cbeust/jcommander) - Command-line argument-parsing framework with custom types and validation via implementing interfaces.
 - [jbock](https://github.com/jbock-java/jbock) - Reflectionless command line parser.
 - [Jexer](https://gitlab.com/klamonte/jexer) - Advanced console (and Swing) text user interface (TUI) library, with mouse-draggable windows, built-in terminal window manager, and sixel image support. Looks like [Turbo Vision](https://en.wikipedia.org/wiki/Turbo_Vision).
 - [JLine](https://github.com/jline/jline3) - Includes features from modern shells like completion or history.
-- [JOpt Simple](https://jopt-simple.github.io/jopt-simple) - Fluent parser that uses the POSIX#getopt and GNU#getopt_long syntaxes.
+- [JOpt Simple](https://github.com/jopt-simple/jopt-simple) - Fluent parser that uses the POSIX#getopt and GNU#getopt_long syntaxes.
 - [picocli](https://github.com/remkop/picocli) - ANSI colors and styles in usage help with annotation-based POSIX/GNU/any syntax, subcommands, strong typing for both options and positional args.
 - [Text-IO](https://github.com/beryx/text-io) - Aids the creation of full console-based applications.
 - [Lanterna](https://github.com/mabe02/lanterna) - Easy console text-GUI library, similar to curses. (LGPL-3.0-only)
@@ -69,8 +69,8 @@ _Libraries for everything related to the CLI._
 
 _Frameworks that can dynamically manage applications inside of a cluster._
 
-- [Apache Aurora](https://aurora.apache.org) - Mesos framework for long-running services and cron jobs.
-- [Singularity](http://getsingularity.com) - Mesos framework that makes deployment and operations easy. It supports web services, background workers, scheduled jobs, and one-off tasks.
+- [Apache Aurora](https://github.com/apache/aurora) - Mesos framework for long-running services and cron jobs.
+- [Singularity](https://github.com/HubSpot/Singularity) - Mesos framework that makes deployment and operations easy. It supports web services, background workers, scheduled jobs, and one-off tasks.
 
 ### Code Analysis
 
