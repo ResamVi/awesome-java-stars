@@ -916,6 +916,7 @@ _Libraries that handle serialization with high efficiency._
 - [Kryo](https://github.com/EsotericSoftware/kryo) - Fast and efficient object graph serialization framework.
 - [MessagePack](https://github.com/msgpack/msgpack-java) - Efficient binary serialization format.
 - [PHP Serializer](https://github.com/marcospassos/java-php-serializer) - Serializing objects in the PHP serialization format.
+- [Fury](https://github.com/alipay/fury) - A blazing fast multi-language serialization framework powered by jit and zero-copy.
 
 ### Server
 
