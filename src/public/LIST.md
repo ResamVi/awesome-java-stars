@@ -196,7 +196,7 @@ _Everything that simplifies interactions with the database._
 - [ArangoDB](https://github.com/arangodb/arangodb-java-driver) - ArangoDB Java driver.
 - [Chronicle Map](https://github.com/OpenHFT/Chronicle-Map) - Efficient, in-memory (opt. persisted to disk), off-heap key-value store.
 - [Debezium](https://github.com/debezium/debezium) - Low latency data streaming platform for change data capture.
-- [druid](hhttps://github.com/apache/druid/) - High-performance, column-oriented, distributed data store.
+- [druid](https://github.com/apache/druid) - High-performance, column-oriented, distributed data store.
 - [eXist](https://github.com/eXist-db/exist) - NoSQL document database and application platform. (LGPL-2.1-only)
 - [FlexyPool](https://github.com/vladmihalcea/flexy-pool) - Brings metrics and failover strategies to the most common connection pooling solutions.
 - [Flyway](https://github.com/flyway/flyway) - Simple database migration tool.
@@ -301,7 +301,7 @@ _Tools that handle the distribution of applications in native formats._
 - [Artipie](https://github.com/artipie/artipie) - Binary artifact management toolkit which hosts them on the file system or S3.
 - [Boxfuse ![c]](https://boxfuse.com) - Deployment of JVM applications to AWS using the principles of immutable infrastructure.
 - [Capsule](https://github.com/puniverse/capsule) - Simple and powerful packaging and deployment. A fat JAR on steroids, or a "Docker for Java" that supports JVM-optimized containers.
-- [Central Repository](https://github.com/sonatype-nexus-community/search-maven-org/) - Largest binary component repository available as a free service to the open-source community. Default used by Apache Maven, and available in all other build tools.
+- [Central Repository](https://github.com/sonatype-nexus-community/search-maven-org) - Largest binary component repository available as a free service to the open-source community. Default used by Apache Maven, and available in all other build tools.
 - [Cloudsmith ![c]](https://cloudsmith.io) - Fully managed package management SaaS with support for Maven/Gradle/SBT with a free tier.
 - [Getdown](https://github.com/threerings/getdown) - A system for deploying Java applications to end-user computers and keeping them up to date. Developed as an alternative to Java Web Start.
 - [IzPack](https://github.com/izpack/izpack) - Setup authoring tool for cross-platform deployments.
@@ -520,7 +520,7 @@ _Libraries that log the behavior of an application._
 - [Kibana](https://github.com/elastic/kibana) - Analyzes and visualizes log files. Some features require payment.
 - [Logback](https://github.com/qos-ch/logback) - Robust logging library with interesting configuration options via Groovy.
 - [Logbook](https://github.com/zalando/logbook) - Extensible, open-source library for HTTP request and response logging.
-- [Logstash](https://github.com/elastic/logstash - Tool for managing log files.
+- [Logstash](https://github.com/elastic/logstash) - Tool for managing log files.
 - [p6spy](https://github.com/p6spy/p6spy) - Enables logging for all JDBC transactions without changes to the code.
 - [SLF4J](https://github.com/qos-ch/slf4j) - Abstraction layer/simple logging facade.
 - [tinylog](https://github.com/tinylog-org/tinylog) - Lightweight logging framework with static logger class.
