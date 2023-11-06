@@ -578,7 +578,7 @@ _Tools for creating and managing microservices._
 - [Helidon](https://github.com/helidon-io/helidon) - Two-style approach for writing microservices: Functional-reactive and as an implementation of MicroProfile.
 - [JDA](https://github.com/discord-jda/JDA) - Wrapping of the Discord REST API and its WebSocket events.
 - [kubernetes-client](https://github.com/fabric8io/kubernetes-client) - Client provides access to the full Kubernetes & OpenShift REST APIs via a fluent DSL.
-- [Micronaut](https://github.com/micronaut-projects) - Modern full-stack framework with focus on modularity, minimal memory footprint and startup time.
+- [Micronaut](https://github.com/micronaut-projects/micronaut-core) - Modern full-stack framework with focus on modularity, minimal memory footprint and startup time.
 - [Nacos](https://github.com/alibaba/nacos) - Dynamic service discovery, configuration and service management platform for building cloud native applications.
 - [OpenAI-Java](https://github.com/TheoKanning/openai-java) - Java libraries for using OpenAI's GPT-3 API.
 - [Quarkus](https://github.com/quarkusio/quarkus) - Kubernetes stack tailored for the HotSpot and Graal VM.
@@ -751,7 +751,7 @@ _Tools for performance analysis, profiling and benchmarking._
 
 _Frameworks that are suites of multiple libraries encompassing several categories._
 
-#### Apache Commons
+### Apache Commons
 
 - [BCEL](https://github.com/apache/commons-bcel) - Byte Code Engineering Library - analyze, create, and manipulate Java class files.
 - [BeanUtils](https://github.com/apache/commons-beanutils) - Easy-to-use wrappers around the Java reflection and introspection APIs.
