@@ -747,11 +747,9 @@ _Tools for performance analysis, profiling and benchmarking._
 - [JMH](https://github.com/openjdk/jmh) - Harness for building, running, and analysing nano/micro/milli/macro benchmarks written in Java and other languages targeting the JVM. (GPL-2.0 only WITH Classpath-exception-2.0)
 - [LatencyUtils](https://github.com/LatencyUtils/LatencyUtils) - Utilities for latency measurement and reporting.
 
-### Platform
-
-_Frameworks that are suites of multiple libraries encompassing several categories._
-
 ### Apache Commons
+
+_Reusable, open source Java software._
 
 - [BCEL](https://github.com/apache/commons-bcel) - Byte Code Engineering Library - analyze, create, and manipulate Java class files.
 - [BeanUtils](https://github.com/apache/commons-beanutils) - Easy-to-use wrappers around the Java reflection and introspection APIs.
@@ -808,7 +806,9 @@ _Frameworks that are suites of multiple libraries encompassing several categorie
 - [VFS](https://github.com/apache/commons-vfs) - Virtual File System component for treating files, FTP, SMB, ZIP and such like as a single logical file system.
 - [Weaver](https://github.com/apache/commons-weaver) - Provides an easy way to enhance (weave) compiled bytecode.
 
-#### Other
+### Other
+
+_Other kinds of platforms_
 
 - [CUBA Platform](https://github.com/cuba-platform/cuba) - High-level framework for developing enterprise applications with a rich web interface, based on Spring, EclipseLink and Vaadin.
 - [Light-4J](https://github.com/networknt/light-4j) - Fast, lightweight and productive microservices framework with built-in [security](https://github.com/networknt/light-oauth2/).
