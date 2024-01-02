@@ -23,4 +23,3 @@ GITHUB_TOKEN=ghp_... ./gradlew run
 ## Contributing
 
 Contributions are welcome, check [CONTRIBUTING](https://github.com/ResamVi/awesome-java-stars/blob/master/CONTRIBUTING.md)
-
